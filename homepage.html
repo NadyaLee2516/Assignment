@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/style_og.css">
+  </head>
+  <body>
+    <div id="div1">
+    <img src="../images/Alteta_Logo_Horizontal.svg">
+    </div>
+    <div class="content">
+      <nav role="navigation">
+        <div id="menuToggle">
+        <input type="checkbox" id="menuButton" aria-label="Menu Button" onclick="menuChecked()" />
+          <span></span>
+				  <span></span>
+				  <span></span>
+          <ul class="menu">
+    				<li><a class="navButton" aria-label="Home" href="homepage.html">Home</a></li>
+    				<li><a class="navButton" aria-label="About Us" href="aboutus.html">About Us</a></li>
+    				<li><a class="navButton" aria-label="Our Reviews" href="reviews.html">Reviews</a></li>
+    				<li><a class="navButton" aria-label="Products" href="products.html">Products</a></li>
+    				<li><a class="navButton" aria-label="Feedback Us" href="feedback.html">Feedback Us</a></li>
+          </ul>
+        </div>
+			</nav>
+    </div>
+
+    <h1>Hi! Welcome to Atleta!</h1>
+    <p>Here, we offer delivery for your sports supplies such as KT-Tape, socks, jerseys and much more!</p>
+    <p>We also offer deliveries for your dance neccessities such as your resistance bands, ballet flats, foot thongs, tights, leotards and much more!</p>
+
+  </body>
+  <script>
+	function menuchecked(){
+		var checkbox = document.getElementById("menuButton");
+		var content = document.getElementById("content");
+		if(checkbox.checked == true){
+			content.style.display = "none";
+		} else {
+			content.style.display = "block";
+		}
+	}
+	function mediaCheck(mediapx) {
+	if (mediapx.matches) { // If media query matches
+	document.getElementById("menuButton").checked = false;
+	content.style.display = "block";
+	} else {
+	document.getElementById("menuButton").checked = false;
+	content.style.display = "block";
+	}
+	}
+
+	var mediapx = window.matchMedia("(max-width: 914px)")
+	mediaCheck(mediapx) // Call listener function at run time
+	mediapx.addListener(mediaCheck) // Attach listener function on state changes
+
+</script>
+</html>
